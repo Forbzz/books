@@ -1,2 +1,3 @@
 Pillow==7.1.1
 Django>=2.2.10
+psycopg2==2.8.5 
