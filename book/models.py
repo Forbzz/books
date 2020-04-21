@@ -61,7 +61,7 @@ class Reviews(models.Model):
 	book = models.ForeignKey(Book, verbose_name = "книга", on_delete = models.CASCADE)
 
 	def __str__(self):
-		return f"{self.name} - {self.book.name}"
+		return self.name
 
 	class Meta:
 		verbose_name = "Отзыв"
