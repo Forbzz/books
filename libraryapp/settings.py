@@ -82,30 +82,18 @@ WSGI_APPLICATION = 'libraryapp.wsgi.application'
 #articles
 DATABASES = {
     'default': {
-#          'ENGINE': 'django.db.backends.sqlite3',
-#          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-     'NAME': 'my_books',
-     'USER': 'my_books_user',
-     'PASSWORD': '7751876',
-     'HOST': 'localhost',
-     'PORT': '5432',
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#      'NAME': 'my_books',
+#      'USER': 'my_books_user',
+#      'PASSWORD': '7751876',
+#      'HOST': 'localhost',
+#      'PORT': '5432',
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'library',
-#         'USER': 'karan',
-#         'PASSWORD': 'hello123',
-#         'HOST': '',
-#         'PORT': '',
-#         'OPTIONS': {
-#             'init_command': 'SET sql_mode = "STRICT_TRANS_TABLES"',
-#         }
-#     }
-# }
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
