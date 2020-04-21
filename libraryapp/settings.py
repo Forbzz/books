@@ -25,7 +25,7 @@ SECRET_KEY = '3#&x*fe-ml%(n%_#4^e5n0u_hp&^#)-d0f!!$k^l*rz9e74(+q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -82,14 +82,14 @@ WSGI_APPLICATION = 'libraryapp.wsgi.application'
 #articles
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-     'NAME': 'my_books',
-     'USER': 'my_books_user',
-     'PASSWORD': '7751876',
-     'HOST': 'localhost',
-     'PORT': '',
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+     #'NAME': 'my_books',
+     #'USER': 'my_books_user',
+     #'PASSWORD': '7751876',
+     #'HOST': 'localhost',
+     #'PORT': '',
     }
 }
 
