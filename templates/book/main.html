@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Books App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#FFF5EE;">
+{% include 'book/navbar.html' %}
+<br>
+
+{% block content %}
+<div  class="grid" style="width: 60%; margin: auto">
+	{% for book in books %}
+	<div align="center" class="card-columns" style="margin: 20px ">
+  <img class="card-img-top" src = "{{ book.picture.url }}" height="400">
+  <div class="card-body">
+      <a href = "/{{ book.id }}/"><h5 class="card-title" align="center">{{ book.name }}</h5></a>
+    <div class="card-footer bg-transparent border-dark">
+    	<p class="card-title">
+        <span><b>Автор:</b>
+            {% for creater in book.author.all %}
+                {{ creater.name }}
+            {% endfor %}
+        </span>
+        <span style="display: block"><b>Год издания:</b>
+                {{ book.year }}
+        </span>
+        <span style="display: block"><b>Жанр:</b>
+                {% for item in book.genre.all%}
+                    {{ item }}
+                {%endfor%}
+        </span>
+        </p>
+    	<center>
+		<a href="update/{{book.id}}" class="btn btn-warning" id = '{{book.id}}'>изменить</a>
+		<a href="delete/{{book.id}}" class="btn btn-danger" id = '{{book.id}}'>удалить</a>
+	</center>
+	</div>
+  </div>
+</div>
+	{% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>

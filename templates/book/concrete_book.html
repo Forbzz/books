@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<style>
+.container {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.container span {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+
+</style>
+<head>
+	<title>Books App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#FFF5EE;">
+<nav class="navbar navbar-light" style="background-color:#FF0033;">
+    <a class="navbar-link btn-lg" href="{% url 'index' %}" style="background-color:#FFCC33;color:#000000;">Library</a>
+    <a href="{% url 'admin:index' %}" class = 'navbar-link btn-lg' style="background-color:#FFCC33;color:#000000;">Admin</a>
+    <a href="{% url 'upload-book' %}" class="navbar-link btn-lg" style="background-color:#FFCC33;color:#000000;">Upload Books</a>
+</nav>
+<br>
+
+{% block content %}
+<div class="card-columns" align="center">
+
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src = "{{ book.picture.url }}"  width="180" height="440">
+      <div class="card-body">
+          <h5 class="card-title" align="center">{{ book.name }}</h5>
+        <div class="card-footer bg-transparent border-dark">
+            <p class="card-title">
+            <span><b>Автор:</b>
+                {% for creater in book.author.all %}
+                    {{ creater }}
+                {% endfor %}
+            </span>
+            </p>
+            <p class="card-title">
+            <span><b>Год издания:</b>
+                {{ book.year }}
+            </span>
+            </p>
+            <span><b>Жанр:</b>
+                {% for item in book.genre.all%}
+                    {{ item }}
+                {%endfor%}
+            </span>
+            </p>
+            <center>
+        </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="b-description" style="display: inline">
+        <h2>Описание</h2>
+        <div class="b-description__container">
+            <div id="truncatedBlock"  style="">
+                <p style="display: flex;" >
+                <h5 align="justify">{{ book.describe }}</h5>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<form action="{% url 'add_review' book.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group editContent">
+                            <label for="contactcomment" >
+                                Ваш комментарий *
+                            </label>
+                            <textarea class="form-control" cols="2" rows="5" name="text"
+                                      id="contactcomment" required="" ></textarea>
+                        </div>
+                        <div class="d-sm-flex">
+                            <div class="col-sm-6 form-group p-0 editContent">
+                                <label for="contactusername" class="editContent">
+                                    Имя *
+                                </label>
+                                <input type="text" class="form-control border" name="name"
+                                       id="contactusername" required="">
+                            </div>
+                        </div>
+                        <button type="submit">
+                            Отправить
+                        </button>
+</form>
+<div>
+    {% for review in book.reviews_set.all %}
+        <div class="container">
+            <span>{{ review.name }}</span>
+            <p>{{ review.text }}</p>
+       </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
