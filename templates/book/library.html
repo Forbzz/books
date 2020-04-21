@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Books App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#FFF5EE;">
+{% include 'book/navbar.html' %}
+<br>
+
+{% block content %}
+<div align="center" class="card-columns">
+	{% for book in shelf %}
+	<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src = "{{ book.picture.url }}"  width="180" height="440">
+  <div class="card-body">
+      <a href = "/{{ book.id }}/"><h5 class="card-title" align="center">{{ book.name }}</h5></a>
+    <div class="card-footer bg-transparent border-dark">
+    	<p class="card-title">
+        <span><b>Автор:</b>
+            {% for creater in book.author.all %}
+                {{ creater.name }}
+            {% endfor %}
+        </span>
+        </p>
+    	<center>
+		<a href="update/{{book.id}}" class="btn btn-warning" id = '{{book.id}}'>изменить</a>
+		<a href="delete/{{book.id}}" class="btn btn-danger" id = '{{book.id}}'>удалить</a>
+	</center>
+	</div>
+  </div>
+</div>
+	{% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>

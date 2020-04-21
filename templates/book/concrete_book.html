@@ -22,11 +22,7 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body style="background-color:#FFF5EE;">
-<nav class="navbar navbar-light" style="background-color:#FF0033;">
-    <a class="navbar-link btn-lg" href="{% url 'index' %}" style="background-color:#FFCC33;color:#000000;">Library</a>
-    <a href="{% url 'admin:index' %}" class = 'navbar-link btn-lg' style="background-color:#FFCC33;color:#000000;">Admin</a>
-    <a href="{% url 'upload-book' %}" class="navbar-link btn-lg" style="background-color:#FFCC33;color:#000000;">Upload Books</a>
-</nav>
+{% include "book/navbar.html" %}
 <br>
 
 {% block content %}
