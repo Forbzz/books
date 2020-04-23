@@ -31,6 +31,7 @@ def index(request):
     return render(request, 'book/library.html', {'shelf': shelf})
 
 
+@login_required(login_url="/login")
 def upload(request):
     upload = BookCreate()
     if request.method == 'POST':
@@ -44,6 +45,7 @@ def upload(request):
         return render(request, 'book/upload_form.html', {'upload_form':upload})
 
 
+@login_required(login_url="/login")
 def update_book(request, book_id):
     book_id = int(book_id)
     try:
@@ -57,6 +59,7 @@ def update_book(request, book_id):
     return render(request, 'book/upload_form.html', {'upload_form':book_form})
 
 
+@login_required(login_url="/login")
 def delete_book(request, book_id):
     book_id = int(book_id)
     try:
