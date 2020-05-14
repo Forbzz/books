@@ -12,8 +12,12 @@
     <a href="{% url 'upload-book' %}" class="navbar-link btn-lg" style="background-color:#FFCC33;color:#000000;">Добавить книги</a>
 
     {% if request.user.is_authenticated %}
+        {% if request.user.Verified == False %}
+            <span class="hello-msg">Not active, {{ request.user }}</span>
+        {% endif %}
         <a href="{% url 'logout' %}" class = 'navbar-link btn-lg' style="background-color:#FFCC33;color:#000000;">Выйти</a>
         <span class="hello-msg">Hello, {{ request.user }}</span>
+
     {% else %}
         <a href="{% url 'login' %}" class = 'navbar-link btn-lg' style="background-color:#FFCC33;color:#000000;">Войти</a>
         <a href="{% url 'register' %}" class = 'navbar-link btn-lg' style="background-color:#FFCC33;color:#000000;">Регистрация</a>

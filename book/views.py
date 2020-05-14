@@ -1,12 +1,19 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views.generic.base import View
 from django.contrib.auth.forms import UserCreationForm
-from .models import Book, Customer
-from .forms import BookCreate, ReviewForm, SignUpForm, CreateUserForm
+from .models import Book, Customer, User, Profile
+from .forms import BookCreate, ReviewForm, SignUpForm, CreateUserForm, UserRegistrationForm
 from django.http import HttpResponse
+
+from .tokens import account_activation_token
 
 
 class BookDetailView(View):
@@ -69,7 +76,6 @@ def delete_book(request, book_id):
     book_sel.delete()
     return redirect('index')
 
-
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -86,6 +92,38 @@ def signup(request):
         form = SignUpForm()
         return render(request, 'book/signup.html', {'form': form})
 
+def loginPage(request):
+    if request.user.is_authenticated:
+        return redirect ('index')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get ('username')
+            password = request.POST.get ('password')
+
+            user = authenticate(request, username = username, password = password)
+
+            if user is not None:
+                login (request, user)
+                return redirect('index')
+            else:
+                messages.info(request, 'Неверное имя пользователя или пароль')
+
+        context = {}
+        return render(request, 'book/login.html', context)
+
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        return render(request, 'book/activate.html')
+    else:
+        return HttpResponse('Activation link is invalid!')
+
 
 def registerPage(request):
     if request.user.is_authenticated:
@@ -95,33 +133,36 @@ def registerPage(request):
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
             if form.is_valid ():
-                form.save ()
-                user = form.cleaned_data.get ('username')
-                messages.success (request, 'Account was created for ' + user)
+                userValue = form.cleaned_data.get ("username")
+                email = form.cleaned_data.get ("email")
+                password1Value = form.cleaned_data.get ("password1")
+                password2Value = form.cleaned_data.get ("password2")
+
+                user = User.objects.create_user (username = userValue, email = email, password = password2Value)
+                user.is_active = False
+                user.save ()
+                current_site = get_current_site (request)
+                mail_subject = 'Активация аккаунта.'
+                token = account_activation_token.make_token (user)
+
+                message = render_to_string ('book/acc_active_email.html', {
+                    'user': user,
+                    'domain': current_site.domain,
+                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                    'token': token,
+                })
+                to_email = form.cleaned_data.get ('email')
+                email = EmailMessage (
+                    mail_subject, message, to = [to_email]
+                )
+                email.send()
+                messages.info(request, 'Письмо с завершением авторизации отправлено на вашу почту')
                 return redirect ('login')
-
         context = {'form': form}
-        return render (request, 'book/register.html', context)
+        return render(request, 'book/register.html', context)
 
 
-def loginPage(request):
-    if request.user.is_authenticated:
-        return redirect ('index')
-    else:
-        if request.method == 'POST':
-            username = request.POST.get ('username')
-            password = request.POST.get ('password')
 
-            user = authenticate (request, username = username, password = password)
-
-            if user is not None:
-                login (request, user)
-                return redirect ('index')
-            else:
-                messages.info (request, 'Username OR password is incorrect')
-
-        context = {}
-        return render (request, 'book/login.html', context)
 
 
 def logoutUser(request):

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Books App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#FFF5EE;">
+{% include 'book/navbar.html' %}
+<br>
+
+{% block content %}
+<div align="center" class="card-columns">
+	  <h2>Данная ссылка больше не активна, возможно аккаунт уже активирован или срок действия токена истёк.</h2>
+</div>
+{% endblock %}
+</body>
+</html>

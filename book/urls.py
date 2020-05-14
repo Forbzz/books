@@ -9,6 +9,7 @@ from django.contrib.auth import views as authViews
 
 #DataFlair Django Tutorials
 from .models import Book
+# from .views import activation_email_sent, activate
 
 urlpatterns = [
 	path('', views.home, name = 'index'),
@@ -18,6 +19,7 @@ urlpatterns = [
 	path('<int:pk>/', DetailView.as_view(model=Book, template_name='book/concrete_book.html'), name="book_detail"),
 	path('review/<int:pk>/', views.AddReview.as_view(), name="add_review"),
 	path('register/', views.registerPage, name="register"),
+	path('activate/<uidb64>/<token>/', views.activate, name='activate'),
 	path('login/', views.loginPage, name="login"),
 	path('logout/', views.logoutUser, name="logout"),
 ]
