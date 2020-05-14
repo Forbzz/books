@@ -27,7 +27,7 @@ SECRET_KEY = '3#&x*fe-ml%(n%_#4^e5n0u_hp&^#)-d0f!!$k^l*rz9e74(+q'
 DEBUG = False
 
 # ALLOWED_HOSTS = ['testserver',]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['herokuapp.com']
 
 # import django
 # django.setup()
