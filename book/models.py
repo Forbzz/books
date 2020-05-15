@@ -38,12 +38,12 @@ class Genre(models.Model):
 
 
 class Book(models.Model):
-    name = models.CharField(max_length = 50)
+    name = models.CharField("Название",max_length = 50)
     year = models.PositiveSmallIntegerField("Год издания",default = 0)
     picture = models.ImageField()
     author = models.ManyToManyField(Author, verbose_name = "автор", related_name = "book_author")
     genre = models.ManyToManyField(Genre, verbose_name = "жанры")
-    describe = models.TextField(default = 'Описание книги')
+    describe = models.TextField("Описание",default = 'Описание книги')
     url = str(id)
 
     def __str__(self):
