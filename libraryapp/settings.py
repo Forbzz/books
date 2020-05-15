@@ -27,8 +27,8 @@ SECRET_KEY = '3#&x*fe-ml%(n%_#4^e5n0u_hp&^#)-d0f!!$k^l*rz9e74(+q'
 DEBUG = False
 
 # ALLOWED_HOSTS = ['testserver',]
-ALLOWED_HOSTS = ['.herokuapp.com']
-# ALLOWED_HOSTS = ['.pythonanywhere.com']
+# ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 # import django
 # django.setup()
 
@@ -103,17 +103,17 @@ WSGI_APPLICATION = 'libraryapp.wsgi.application'
 #articles
 DATABASES = {
     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-     'NAME': 'py_books',
-     'USER': 'vitas',
-     'PASSWORD': '7751876',
-     'HOST': 'localhost',
-     'PORT': '',
-     'TEST': {
-        'NAME': 'tests',
-     }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#      'NAME': 'py_books',
+#      'USER': 'vitas',
+#      'PASSWORD': '7751876',
+#      'HOST': 'localhost',
+#      'PORT': '',
+#      'TEST': {
+#         'NAME': 'tests',
+#      }
     }
 }
 
