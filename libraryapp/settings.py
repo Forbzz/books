@@ -153,7 +153,7 @@ LOGGING = {
     'version': 1,
     'loggers': {
         'django': {
-            'handlers': ['file_info', 'file_debug'],
+            'handlers': ['file_info'],
             'lever': 'DEBUG'
         },
     },
@@ -164,12 +164,12 @@ LOGGING = {
             'filename': './logs/info.log',
             'formatter': 'simpleRe'
         },
-        'file_debug': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': './logs/debug.log',
-            'formatter': 'simpleRe'
-        }
+#         'file_debug': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'filename': './logs/debug.log',
+#             'formatter': 'simpleRe'
+#         }
     },
     'formatters':{
         'simpleRe': {
