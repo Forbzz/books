@@ -27,8 +27,9 @@ SECRET_KEY = '3#&x*fe-ml%(n%_#4^e5n0u_hp&^#)-d0f!!$k^l*rz9e74(+q'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['testserver',]
+# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['.herokuapp.com']
-# ALLOWED_HOSTS = ['.pythonanywhere.com']
+
 # import django
 # django.setup()
 
@@ -46,7 +47,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-#     'django.contrib.admin.apps.SimpleAdminConfig',
+    # 'django.contrib.admin.apps.SimpleAdminConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -103,8 +104,8 @@ WSGI_APPLICATION = 'libraryapp.wsgi.application'
 #articles
 DATABASES = {
     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
      'ENGINE': 'django.db.backends.postgresql_psycopg2',
      'NAME': 'py_books',
      'USER': 'vitas',
@@ -151,9 +152,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LOGGING = {
     'version': 1,
+    'disable_existing_loggers': False,
     'loggers': {
         'django': {
-            'handlers': ['file_info'],
+            'handlers': ['file_info', 'file_debug', 'file_error'],
             'lever': 'DEBUG'
         },
     },
@@ -164,12 +166,18 @@ LOGGING = {
             'filename': './logs/info.log',
             'formatter': 'simpleRe'
         },
-#         'file_debug': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': './logs/debug.log',
-#             'formatter': 'simpleRe'
-#         }
+        'file_debug': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': './logs/debug.log',
+            'formatter': 'simpleRe'
+        },
+        'file_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': './logs/error.log',
+            'formatter': 'simpleRe'
+        }
     },
     'formatters':{
         'simpleRe': {
@@ -192,10 +200,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+DJANGO_LOG_LEVEL = DEBUG
 # DataFlair Static Files Settings
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-files')
@@ -208,6 +214,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-
-import django_heroku
-django_heroku.settings(locals())

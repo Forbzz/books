@@ -1,6 +1,7 @@
+import logging
+
 from django import forms
 from django.contrib.auth import authenticate
-
 from .models import Book, Reviews, User, Profile
 from django.contrib.auth.forms import UserCreationForm
 
@@ -27,9 +28,12 @@ class UserRegistrationForm (forms.ModelForm):
         fields = ('username', 'first_name', 'email')
 
     def clean_password2 (self):
+        logger = logging.getLogger('django')
         cd = self.cleaned_data
         if cd ['password'] != cd ['password2']:
+            logger.info('Password are different')
             raise forms.ValidationError ('Passwords don\'t match.')
+        logger.info('Passwords are the same')
         return cd ['password2']
 
 

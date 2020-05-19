@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="10c9d321-6a2a-4c21-aa09-361861433ae1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="66dfc1d6-119c-4649-b0e0-05bf4b9e602c" />
+  <component name="ProjectId" id="1aLDrkSHVE7naQkHvg7hdQPdaae" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/book" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Forbz\PycharmProjects\DP\templates" />
+      <recent name="C:\Users\Forbz\PycharmProjects\DP" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/book" />
+      <recent name="$PROJECT_DIR$/templates/book" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django Server.DP">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="libraryapp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="libraryapp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/book" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/book/models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="libraryapp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/book" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/book/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="libraryapp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/book" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/book/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DP" type="Python.DjangoServer" factoryName="Django server">
+      <module name="libraryapp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="libraryapp.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tests" />
+        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.views" />
+        <item itemvalue="Python.models" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10c9d321-6a2a-4c21-aa09-361861433ae1" name="Default Changelist" comment="" />
+      <created>1586506180309</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586506180309</updated>
+      <workItem from="1586506234640" duration="494000" />
+      <workItem from="1586506812880" duration="768000" />
+      <workItem from="1586518155824" duration="4041000" />
+      <workItem from="1586596466956" duration="724000" />
+      <workItem from="1586614626061" duration="728000" />
+      <workItem from="1586774994220" duration="8217000" />
+      <workItem from="1586789080530" duration="127000" />
+      <workItem from="1586852613631" duration="1997000" />
+      <workItem from="1586854652062" duration="12091000" />
+      <workItem from="1587039804727" duration="3623000" />
+      <workItem from="1587044187748" duration="993000" />
+      <workItem from="1587119277483" duration="483000" />
+      <workItem from="1587134304280" duration="638000" />
+      <workItem from="1587197148082" duration="15666000" />
+      <workItem from="1587283476661" duration="851000" />
+      <workItem from="1587297149132" duration="968000" />
+      <workItem from="1587384294681" duration="2715000" />
+      <workItem from="1587462319213" duration="934000" />
+      <workItem from="1587477979603" duration="16000" />
+      <workItem from="1587545150702" duration="115000" />
+      <workItem from="1587634948792" duration="1847000" />
+      <workItem from="1589288310304" duration="9925000" />
+      <workItem from="1589384146445" duration="14000" />
+      <workItem from="1589444237321" duration="700000" />
+      <workItem from="1589444954691" duration="12620000" />
+      <workItem from="1589462065177" duration="6089000" />
+      <workItem from="1589475013210" duration="267000" />
+      <workItem from="1589527588097" duration="3201000" />
+      <workItem from="1589535920114" duration="220000" />
+      <workItem from="1589536294586" duration="697000" />
+      <workItem from="1589815420388" duration="2234000" />
+      <workItem from="1589872727776" duration="3040000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="657" y="148" width="596" height="816" key="#DP" timestamp="1587384424843">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="657" y="148" width="596" height="816" key="#DP/0.40.1920.1040@0.40.1920.1040" timestamp="1587384424843" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586506846712">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586506846712" />
+    <state x="690" y="307" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589444669285">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586855607827" />
+    <state x="690" y="307" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1589444669285" />
+    <state x="814" y="314" width="271" height="478" key="EnvironmentVariablesDialog" timestamp="1587384415902">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="814" y="314" width="271" height="478" key="EnvironmentVariablesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1587384415902" />
+    <state x="740" y="315" width="424" height="479" key="FileChooserDialogImpl" timestamp="1587545185077">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587044212798" />
+    <state x="740" y="315" width="424" height="479" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1587545185077" />
+    <state width="1878" height="275" key="GridCell.Tab.0.bottom" timestamp="1589876447778">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587298249187" />
+    <state width="1878" height="275" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1589876447778" />
+    <state width="1878" height="275" key="GridCell.Tab.0.center" timestamp="1589876447777">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="177" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587298249187" />
+    <state width="1878" height="275" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1589876447777" />
+    <state width="1878" height="275" key="GridCell.Tab.0.left" timestamp="1589876447776">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="177" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587298249187" />
+    <state width="1878" height="275" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1589876447776" />
+    <state width="1878" height="275" key="GridCell.Tab.0.right" timestamp="1589876447777">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="177" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587298249187" />
+    <state width="1878" height="275" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1589876447777" />
+    <state width="1878" height="341" key="GridCell.Tab.1.bottom" timestamp="1589469091264">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586879226885" />
+    <state width="1878" height="341" key="GridCell.Tab.1.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1589469091264" />
+    <state width="1878" height="341" key="GridCell.Tab.1.center" timestamp="1589469091264">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586879226885" />
+    <state width="1878" height="341" key="GridCell.Tab.1.center/0.40.1920.1040@0.40.1920.1040" timestamp="1589469091264" />
+    <state width="1878" height="341" key="GridCell.Tab.1.left" timestamp="1589469091264">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586879226885" />
+    <state width="1878" height="341" key="GridCell.Tab.1.left/0.40.1920.1040@0.40.1920.1040" timestamp="1589469091264" />
+    <state width="1878" height="341" key="GridCell.Tab.1.right" timestamp="1589469091264">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586879226885" />
+    <state width="1878" height="341" key="GridCell.Tab.1.right/0.40.1920.1040@0.40.1920.1040" timestamp="1589469091264" />
+    <state x="461" y="202" key="SettingsEditor" timestamp="1587384318428">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586506870039" />
+    <state x="461" y="202" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1587384318427" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1586878449216">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1586878449216" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587297222235">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587297222235" />
+    <state x="623" y="268" width="672" height="678" key="search.everywhere.popup" timestamp="1589876239431">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="623" y="268" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1589876239431" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/libraryapp$views.coverage" NAME="views Coverage Results" MODIFIED="1586875091778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/book" />
+    <SUITE FILE_PATH="coverage/libraryapp$tests.coverage" NAME="tests Coverage Results" MODIFIED="1589456428421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/book" />
+    <SUITE FILE_PATH="coverage/libraryapp$models.coverage" NAME="models Coverage Results" MODIFIED="1586777650081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/book" />
+    <SUITE FILE_PATH="coverage/libraryapp$manage.coverage" NAME="manage Coverage Results" MODIFIED="1587384385691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

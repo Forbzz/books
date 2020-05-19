@@ -12,9 +12,10 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Book, Customer, User, Profile
 from .forms import BookCreate, ReviewForm, SignUpForm, CreateUserForm, UserRegistrationForm
 from django.http import HttpResponse
-
+import logging
 from .tokens import account_activation_token
 
+# logger = logging.getLogger('book.views.activate')
 
 class BookDetailView(View):
     def get(self, request, pk):
@@ -40,13 +41,16 @@ def index(request):
 
 @login_required(login_url="/login")
 def upload(request):
+    logger = logging.getLogger('django')
     upload = BookCreate()
     if request.method == 'POST':
         upload = BookCreate(request.POST, request.FILES)
         if upload.is_valid():
             upload.save()
+            logger.info(f"Book has been successfully added to shelf")
             return redirect('index')
         else:
+            logger.warning("smth wrong with adding a book")
             return HttpResponse("""your form is wrong, reload on <a href = "{{ url : 'index'}}">reload</a>""")
     else:
         return render(request, 'book/upload_form.html', {'upload_form':upload})
@@ -68,15 +72,18 @@ def update_book(request, book_id):
 
 @login_required(login_url="/login")
 def delete_book(request, book_id):
+    logger = logging.getLogger('django')
     book_id = int(book_id)
     try:
         book_sel = Book.objects.get(id = book_id)
     except Book.DoesNotExist:
         return redirect('index')
     book_sel.delete()
+    logger.info(f"book with id={book_id} has been deleted")
     return redirect('index')
 
 def signup(request):
+    logger = logging.getLogger('django')
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -85,6 +92,7 @@ def signup(request):
             user.profile.city = form.cleaned_data.get('city')
             user.save()
             login(request, user)
+            logger.info(f"{user.username} successfully authorized to site")
             return redirect('index')
         else:
             return HttpResponse("""your form is wrong, reload on <a href = "{{ form : 'index'}}">reload</a>""")
@@ -92,7 +100,9 @@ def signup(request):
         form = SignUpForm()
         return render(request, 'book/signup.html', {'form': form})
 
+
 def loginPage(request):
+    logger = logging.getLogger('django')
     if request.user.is_authenticated:
         return redirect ('index')
     else:
@@ -104,24 +114,31 @@ def loginPage(request):
 
             if user is not None:
                 login (request, user)
+                logger.info(f"{username} successfully authorized to site")
                 return redirect('index')
             else:
+                logger.warning(f"incorrect username or password by {username}")
                 messages.info(request, 'Неверное имя пользователя или пароль')
 
         context = {}
         return render(request, 'book/login.html', context)
 
+
 def activate(request, uidb64, token):
+    logger = logging.getLogger('django')
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
+        logger.error('Once of error excepted: TypeError, ValueError, OverflowError, User.DoesNotExist')
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
+        logger.info(f'verified successfully for {user.username}')
         return render(request, 'book/activate.html')
     else:
+        logger.warning("verified isn't successfully")
         return HttpResponse('Activation link is invalid!')
 
 
@@ -129,6 +146,8 @@ def registerPage(request):
     if request.user.is_authenticated:
         return redirect ('index')
     else:
+        logger = logging.getLogger('django')
+
         form = CreateUserForm()
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
@@ -157,6 +176,8 @@ def registerPage(request):
                 )
                 email.send()
                 messages.info(request, 'Письмо с завершением авторизации отправлено на вашу почту')
+
+                logger.info(f'Email send to {userValue}')
                 return redirect ('login')
         context = {'form': form}
         return render(request, 'book/register.html', context)
