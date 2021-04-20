@@ -11,7 +11,7 @@ Pillow==7.1.1
 pipenv==2018.11.26
 pluggy==0.13.1
 psycopg2-binary==2.8.5
-py==1.8.1
+py==1.10.0
 pyparsing==2.4.7
 pytest==5.4.2
 pytest-django==3.9.0
